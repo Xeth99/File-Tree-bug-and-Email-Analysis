@@ -1,9 +1,16 @@
 import FileTree from './fileTree';
 
+
 export function createFileTree(input) {
   const fileTree = new FileTree();
 
-  for (const inputNode of input) {
+  const rootNodes = input.shift();
+
+  const rootNodesIds = input.sort((a, b) => a.id - b.id);
+
+  rootNodesIds.unshift(rootNodes);
+  
+  for (const inputNode of rootNodesIds) {
     const parentNode = inputNode.parentId
       ? fileTree.findNodeById(inputNode.parentId)
       : null;
@@ -18,3 +25,12 @@ export function createFileTree(input) {
 
   return fileTree;
 }
+
+
+
+
+
+
+
+
+

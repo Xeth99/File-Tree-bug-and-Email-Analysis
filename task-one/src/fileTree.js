@@ -61,5 +61,8 @@ class FileTree {
     this.nodes.push(node);
   }
 }
+ module.exports = FileTree;
+//export default FileTree;
 
-export default FileTree;
+
+
